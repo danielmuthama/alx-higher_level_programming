@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Author - Bamidele Adefolaju
+# Author - Tolulope Fakunle
 
 """Print numbers 0 to 98 in decimal and hexadecimal."""
 for number in range(0, 99):
