@@ -3,5 +3,5 @@
 
 
 class Rectangle:
-    """Represents a rectangle."""
+    """Represent a rectangle."""
     pass
