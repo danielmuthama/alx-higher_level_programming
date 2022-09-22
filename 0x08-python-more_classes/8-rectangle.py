@@ -13,14 +13,13 @@ class Rectangle:
         Area: returns the area of the rectangle
         Perimeter: returns the perimeter of the rectangle
     """
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
-
-    def __del__(self):
-        """rectangle class destructor"""
-        print("Bye rectangle...")
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -56,6 +55,16 @@ class Rectangle:
             return 0
         return 2 * (self.__height + self.__width)
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
+
     def __str__(self):
         """Returns the printable representation of the Rectangle.
         Represents the rectangle with the # character.
@@ -64,7 +73,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         for x in range(0, self.__height):
-            [print("#", end="") for y in range(0, self.__width)]
+            [print(self.print_symbol, end="") for y in range(0, self.__width)]
             if x != self.__height - 1:
                 print("")
         return ""
@@ -75,3 +84,8 @@ class Rectangle:
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
+
+    def __del__(self):
+        """rectangle class destructor"""
+        print("Bye rectangle...")
+        type(self).number_of_instances -= 1
