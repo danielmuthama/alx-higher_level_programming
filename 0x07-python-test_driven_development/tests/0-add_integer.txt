@@ -1,3 +1,5 @@
+
+===========================
 How to Use 0-add_integer.py
 ===========================
 
@@ -83,8 +85,8 @@ If either argument is a non-integer and non-float, a TypeError is raised:
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-If both arguments are non-integers and non-floats, a TypeError message will be
-printed for only the first argument.
+If both arguments are non-integers and non-floats, a TypeError message is only
+printed for the first argument.
 
 ::
 

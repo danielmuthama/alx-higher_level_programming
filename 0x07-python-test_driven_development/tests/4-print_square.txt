@@ -1,3 +1,5 @@
+
+============================
 How to Use 4-print_square.py
 ============================
 
@@ -50,13 +52,13 @@ The parameter ``size`` must be an integer. Otherwise, a TypeError is raised.
 
 ::
 
-    >>> print_square("a string")
+    >>> print_square("not an int")
     Traceback (most recent call last):
     TypeError: size must be an integer
 
 ::
 
-    >>> print_square(3.5)
+    >>> print_square(5.5)
     Traceback (most recent call last):
     TypeError: size must be an integer
 
@@ -70,7 +72,7 @@ If ``size`` is less than zero, a ValueError is raised.
 
 ::
 
-    >>> print_square(-8)
+    >>> print_square(-7)
     Traceback (most recent call last):
     ValueError: size must be >= 0
 
@@ -78,7 +80,7 @@ Note that type-checking occurs before value-checking.
 
 ::
 
-    >>> print_square(-6.5)
+    >>> print_square(-7.5)
     Traceback (most recent call last):
     TypeError: size must be an integer
 
